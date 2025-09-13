@@ -15,13 +15,13 @@
       </p:NodeReference>
       <Patch Id="HF6fS92S3RWMyGUwmrvLT3">
         <Canvas Id="GPNhdAGD97CN2OOjwE2uya" CanvasType="Group">
-          <Node Bounds="177,630,145,19" Id="TZuXqFSeBC7NbP2UnZfuiO">
+          <Node Bounds="157,510,145,19" Id="TZuXqFSeBC7NbP2UnZfuiO">
             <p:NodeReference LastCategoryFullName="Graphics.Skia" LastDependency="VL.Skia.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="Renderer" />
             </p:NodeReference>
             <Pin Id="JEdZsDh0X7WNqb0N9szavD" Name="Node Context" Kind="InputPin" IsHidden="true" />
-            <Pin Id="Ik7g278n3whLqdp6Y3HdJR" Name="Bounds" Kind="InputPin" DefaultValue="1992, 180, 280, 794" IsHidden="true" />
+            <Pin Id="Ik7g278n3whLqdp6Y3HdJR" Name="Bounds" Kind="InputPin" DefaultValue="1200, 279, 280, 794" IsHidden="true" />
             <Pin Id="E9MzivSJvOrPBS8USPNjck" Name="Save Bounds" Kind="InputPin" IsHidden="true" />
             <Pin Id="VFU4MvB7lWAODNyNb7XGpu" Name="Bound to Document" Kind="InputPin" IsHidden="true" />
             <Pin Id="G4Wn52MIpEuLSm270yoAEC" Name="Dialog If Document Changed" Kind="InputPin" IsHidden="true" />
@@ -42,7 +42,7 @@
             <Pin Id="OgbMBkgOMwvPF8ZOEfx76J" Name="ClientBounds" Kind="OutputPin" />
             <Pin Id="Ba9tAh0l6gkNUotY4s2ax1" Name="Render Time" Kind="OutputPin" />
           </Node>
-          <Node Bounds="177,580,79,19" Id="JuwEoCpJFAwL1m003jD4qK">
+          <Node Bounds="157,460,79,19" Id="JuwEoCpJFAwL1m003jD4qK">
             <p:NodeReference LastCategoryFullName="Avalonia" LastDependency="VL.Skia.Avalonia.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="AvaloniaLayer" />
@@ -53,7 +53,7 @@
             <Pin Id="K5QQTIe3oDDO0jiwYUxXSs" Name="Output" Kind="StateOutputPin" />
             <Pin Id="JDeTqAK1NQ8PtcjjWUr005" Name="Scaling Factor" Kind="InputPin" IsHidden="true" />
           </Node>
-          <Node Bounds="251,550,69,19" Id="N7ZVxCRQpv1NklPRPvzI0G">
+          <Node Bounds="231,430,69,19" Id="N7ZVxCRQpv1NklPRPvzI0G">
             <p:NodeReference LastCategoryFullName="Avalonia.Avalonia.Themes.Variants" LastDependency="VL.Avalonia.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <FullNameCategoryReference ID="Avalonia.Avalonia.Themes.Variants" />
@@ -61,7 +61,7 @@
             </p:NodeReference>
             <Pin Id="O9VTw1BnwDVPrUg90JgZlu" Name="Dark Theme" Kind="OutputPin" />
           </Node>
-          <Node Bounds="177,474,104,19" Id="LCOLazvZsDaP5zZW2dHbwN">
+          <Node Bounds="157,354,104,19" Id="LCOLazvZsDaP5zZW2dHbwN">
             <p:NodeReference LastCategoryFullName="Avalonia.Controls.Collections" LastDependency="VL.Avalonia.Custom.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="ListBoxReorderable" />
@@ -91,7 +91,7 @@
             <Pin Id="Rfdb5oiFglVQHAZPnGMnzR" Name="Z Index" Kind="InputPin" IsHidden="true" />
             <Pin Id="NL9S0DpjTHwN7EuWnW3yl8" Name="Is Enabled" Kind="InputPin" IsHidden="true" />
           </Node>
-          <Pad Id="TUXHdRmvvUsLZOJn5AUBAB" Bounds="179,281,104,95" ShowValueBox="true" isIOBox="true">
+          <Pad Id="TUXHdRmvvUsLZOJn5AUBAB" Bounds="159,161,104,95" ShowValueBox="true" isIOBox="true">
             <p:TypeAnnotation LastCategoryFullName="Collections" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Spread" />
               <p:TypeArguments>
@@ -111,7 +111,7 @@
               <Item>melon</Item>
             </p:Value>
           </Pad>
-          <Node Bounds="276,430,53,19" Id="LAxObthoKqBOgqcx9VvTlp">
+          <Node Bounds="256,310,53,19" Id="LAxObthoKqBOgqcx9VvTlp">
             <p:NodeReference LastCategoryFullName="Reactive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <CategoryReference Kind="Category" Name="Reactive" NeedsToBeDirectParent="true" />
@@ -124,7 +124,16 @@
             <Pin Id="LNaR2fESiUXMXgC5FxVFHI" Name="Value" Kind="OutputPin" />
             <Pin Id="BDFfTcsGuuWMIeHuoo2JDL" Name="Author" Kind="InputPin" IsHidden="true" />
           </Node>
-          <Pad Id="Ji1Wz1BoUMjNlwYAPJK49s" Comment="" Bounds="363,560,190,132" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="Ji1Wz1BoUMjNlwYAPJK49s" Comment="" Bounds="343,440,190,132" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="JhJ81ngryi7NpFQXMl9KrH" Bounds="276,157,292,110" ShowValueBox="true" isIOBox="true" Value="here the ItemsSource is not a CHannel (inside code it's an IEnumerable) so if a change in the order happen in the ListBox then it's not reflected on the spread outside">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
         </Canvas>
         <Patch Id="E4nQOcIT0zvOYgkhprkSgE" Name="Create" />
         <Patch Id="Gt5OjD78KcqMMXj2SHrzkR" Name="Update" />
