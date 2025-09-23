@@ -1,16 +1,9 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Controls.Presenters;
 using Avalonia.Controls.Primitives;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.VisualTree;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace VL.Avalonia.Custom.Controls.Collections
 {
@@ -21,18 +14,14 @@ namespace VL.Avalonia.Custom.Controls.Collections
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
         {
             base.OnApplyTemplate(e);
-
             DragDrop.SetAllowDrop(this, true);
             AddHandler(PointerPressedEvent, OnPointerPressed, RoutingStrategies.Tunnel);
             AddHandler(PointerReleasedEvent, OnPointerReleased, RoutingStrategies.Tunnel);
             AddHandler(DragDrop.DragOverEvent, DragOver);
         }
 
-
         private object? _draggedItem;
         private object? _originalSelectedItem;
-
-
 
         private void OnPointerReleased(object? sender, PointerReleasedEventArgs e)
         {
@@ -60,13 +49,16 @@ namespace VL.Avalonia.Custom.Controls.Collections
                     if (oldIndex < newIndex) newIndex--;
 
                     collection.Insert(newIndex, _draggedItem);
-                    this.ItemsSource = new System.Collections.ObjectModel.ObservableCollection<object>(collection);
                     this.SelectedItem = _originalSelectedItem;
+
+                    this.ItemsSource = collection;
                 }
             }
 
             _draggedItem = null;
         }
+
+
         private void OnPointerPressed(object? sender, PointerPressedEventArgs e)
         {
             var point = e.GetPosition(this);
@@ -80,7 +72,6 @@ namespace VL.Avalonia.Custom.Controls.Collections
                 _draggedItem = sourceElement?.DataContext;
             }
         }
-
 
 
         private void Drop(object? sender, DragEventArgs e)
@@ -115,6 +106,7 @@ namespace VL.Avalonia.Custom.Controls.Collections
 
             _draggedItem = null;
         }
+
 
         private void DragOver(object? sender, DragEventArgs e)
         {
