@@ -21,7 +21,7 @@
               <Choice Kind="ProcessAppFlag" Name="Renderer" />
             </p:NodeReference>
             <Pin Id="JEdZsDh0X7WNqb0N9szavD" Name="Node Context" Kind="InputPin" IsHidden="true" />
-            <Pin Id="Ik7g278n3whLqdp6Y3HdJR" Name="Bounds" Kind="InputPin" DefaultValue="1200, 279, 280, 794" IsHidden="true" />
+            <Pin Id="Ik7g278n3whLqdp6Y3HdJR" Name="Bounds" Kind="InputPin" DefaultValue="1200, 278, 280, 794" IsHidden="true" />
             <Pin Id="E9MzivSJvOrPBS8USPNjck" Name="Save Bounds" Kind="InputPin" IsHidden="true" />
             <Pin Id="VFU4MvB7lWAODNyNb7XGpu" Name="Bound to Document" Kind="InputPin" IsHidden="true" />
             <Pin Id="G4Wn52MIpEuLSm270yoAEC" Name="Dialog If Document Changed" Kind="InputPin" IsHidden="true" />
@@ -67,6 +67,7 @@
               <Choice Kind="ProcessAppFlag" Name="ListBoxReorderable" />
             </p:NodeReference>
             <Pin Id="O68K623X5UXLdosQg1pQsJ" Name="Items" Kind="InputPin" />
+            <Pin Id="KXWCxHtbKDSLpO5ScALCPj" Name="Items List" Kind="InputPin" />
             <Pin Id="NsuxiPQFQxwPVKQzTLeTWC" Name="Style" Kind="InputPin" />
             <Pin Id="CRA9ztFl6nmQEBEYtnyyX5" Name="Output" Kind="OutputPin" />
             <Pin Id="NZUO0vCb6xZNFyqfrDl5nt" Name="Classes" Kind="InputPin" IsHidden="true" />
@@ -91,7 +92,7 @@
             <Pin Id="Rfdb5oiFglVQHAZPnGMnzR" Name="Z Index" Kind="InputPin" IsHidden="true" />
             <Pin Id="NL9S0DpjTHwN7EuWnW3yl8" Name="Is Enabled" Kind="InputPin" IsHidden="true" />
           </Node>
-          <Pad Id="TUXHdRmvvUsLZOJn5AUBAB" Bounds="159,161,104,95" ShowValueBox="true" isIOBox="true">
+          <Pad Id="TUXHdRmvvUsLZOJn5AUBAB" Bounds="159,41,103,95" ShowValueBox="true" isIOBox="true">
             <p:TypeAnnotation LastCategoryFullName="Collections" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Spread" />
               <p:TypeArguments>
@@ -125,7 +126,7 @@
             <Pin Id="BDFfTcsGuuWMIeHuoo2JDL" Name="Author" Kind="InputPin" IsHidden="true" />
           </Node>
           <Pad Id="Ji1Wz1BoUMjNlwYAPJK49s" Comment="" Bounds="343,440,190,132" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="JhJ81ngryi7NpFQXMl9KrH" Bounds="276,157,292,110" ShowValueBox="true" isIOBox="true" Value="here the ItemsSource is not a CHannel (inside code it's an IEnumerable) so if a change in the order happen in the ListBox then it's not reflected on the spread outside">
+          <Pad Id="JhJ81ngryi7NpFQXMl9KrH" Bounds="273,41,291,98" ShowValueBox="true" isIOBox="true" Value="here the ItemsSource is not a CHannel (inside code it's an IEnumerable) so if a change in the order happen in the ListBox then it's not reflected on the spread outside">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -134,8 +135,21 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
+          <Node Bounds="190,270,53,19" Id="CQAtmDeRePyMnWV1JWVYTc">
+            <p:NodeReference LastCategoryFullName="Reactive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="Category" Name="Reactive" NeedsToBeDirectParent="true" />
+              <Choice Kind="ProcessAppFlag" Name="Channel" />
+            </p:NodeReference>
+            <Pin Id="D8FKndUv8m5OCszVelpfRa" Name="Node Context" Kind="InputPin" IsHidden="true" />
+            <Pin Id="A4RGNmBjhVvOHfJxAYNJqc" Name="Initial Value" Kind="InputPin" IsHidden="true" />
+            <Pin Id="VhxzADxV1kzOf35o5roYeF" Name="Value" Kind="InputPin" />
+            <Pin Id="SQ9iw0Y8MtPQXYu9K9u0cl" Name="Output" Kind="OutputPin" />
+            <Pin Id="OyKrusv0ZZALDF9vwnBvnJ" Name="Value" Kind="OutputPin" />
+            <Pin Id="KA5UjJZ81yFNmNTmlHcUN5" Name="Author" Kind="InputPin" IsHidden="true" />
+          </Node>
         </Canvas>
-        <Patch Id="E4nQOcIT0zvOYgkhprkSgE" Name="Create" />
+        <Patch Id="E4nQOcIT0zvOYgkhprkSgE" Name="Create" ParticipatingElements="OBB5XANDDqfMNT1wnRx1G8" />
         <Patch Id="Gt5OjD78KcqMMXj2SHrzkR" Name="Update" />
         <ProcessDefinition Id="TCCjnmNcwyDMUjhDAVy6VD">
           <Fragment Id="I0A0EFuOXx9LY9jz0fXI25" Patch="E4nQOcIT0zvOYgkhprkSgE" Enabled="true" />
@@ -143,10 +157,11 @@
         </ProcessDefinition>
         <Link Id="JwXAWZ6lzG1Nj5u2WrXPlw" Ids="O9VTw1BnwDVPrUg90JgZlu,UTorpl5SC2ONbmEJTZTB1I" />
         <Link Id="LmHiSwVmg2ZNtH7dY0UQDb" Ids="K5QQTIe3oDDO0jiwYUxXSs,Bx2j9CQTlsfLXtqoX9QHGf" />
-        <Link Id="CAViYCDpsQVPI9DhV63Bjz" Ids="TUXHdRmvvUsLZOJn5AUBAB,O68K623X5UXLdosQg1pQsJ" />
         <Link Id="JofYFQS2T3BNqd60e3Dzkt" Ids="CRA9ztFl6nmQEBEYtnyyX5,DTEo8lwJ6iJNpkgnpQfarY" />
         <Link Id="TZihsNP82nGQTiqblMCmif" Ids="ATYLn1jvgB1Pia6xjz0xSf,Nr1zCCx3KMZNYGm8eUkCSF" />
         <Link Id="ShOvTtCyivqK95MLhB77IR" Ids="ATYLn1jvgB1Pia6xjz0xSf,Ji1Wz1BoUMjNlwYAPJK49s" />
+        <Link Id="OBB5XANDDqfMNT1wnRx1G8" Ids="TUXHdRmvvUsLZOJn5AUBAB,VhxzADxV1kzOf35o5roYeF" />
+        <Link Id="VS0IDnklRlaOlV6x13Pp8a" Ids="SQ9iw0Y8MtPQXYu9K9u0cl,KXWCxHtbKDSLpO5ScALCPj" />
       </Patch>
     </Node>
   </Patch>

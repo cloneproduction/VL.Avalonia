@@ -35,6 +35,8 @@ namespace VL.Avalonia.Custom.Controls.Collections
                 return;
 
 
+            var pouet = IsAbove(e);
+
             var collection = this.ItemsSource?.Cast<object>().ToList();
             if (collection != null)
             {
@@ -73,41 +75,6 @@ namespace VL.Avalonia.Custom.Controls.Collections
             }
         }
 
-
-        private void Drop(object? sender, DragEventArgs e)
-        {
-            if (_draggedItem == null)
-                return;
-
-            var point = e.GetPosition(this);
-            var targetItem = GetItemUnderPointer(point);
-
-            if (targetItem == null || targetItem == _draggedItem)
-                return;
-
-            var collection = this.ItemsSource?.Cast<object>().ToList();
-            if (collection != null)
-            {
-                int oldIndex = collection.IndexOf(_draggedItem);
-                int newIndex = collection.IndexOf(targetItem);
-
-                if (oldIndex >= 0 && newIndex >= 0 && oldIndex != newIndex)
-                {
-                    collection.RemoveAt(oldIndex);
-
-                    // If item was before the drop position, the index shifts by one
-                    if (oldIndex < newIndex) newIndex--;
-
-                    collection.Insert(newIndex, _draggedItem);
-                    this.ItemsSource = new System.Collections.ObjectModel.ObservableCollection<object>(collection);
-                    this.SelectedItem = _originalSelectedItem;
-                }
-            }
-
-            _draggedItem = null;
-        }
-
-
         private void DragOver(object? sender, DragEventArgs e)
         {
             if (e.Data.Contains(DataFormats.Text))
@@ -117,15 +84,26 @@ namespace VL.Avalonia.Custom.Controls.Collections
             }
         }
 
+        private bool IsAbove(PointerReleasedEventArgs e)
+        {
+            var point = e.GetPosition(this);
+            var item = GetItemUnderPointer(point) as Visual;
+
+            var pointOnItem = e.GetPosition(item);
+            var height = item.Bounds.Height;
+
+            if(pointOnItem.Y < height)
+                return true;
+
+            return false;
+        }
 
         private object? GetItemUnderPointer(Point point)
         {
             var visual = this.InputHitTest(point) as Visual;
 
             while (visual != null && visual is not ListBoxItem)
-            {
                 visual = visual.GetVisualParent();
-            }
 
             return (visual as ListBoxItem)?.DataContext;
         }
